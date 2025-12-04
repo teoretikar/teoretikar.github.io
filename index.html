@@ -117,19 +117,19 @@
 <body>
     <button class="toggle" onclick="toggleTheme()">[ theme ]</button>
 
-    <h1>~/teoretika</h1>
-    <p class="guarb">// autonomous systems.</p>
-
+    <h1>~\teoretika</h1>
+    <p class="guarb">\\ autonomous systems.</p>
+    
     <div class="block">
         <h2>$ cat projects.txt</h2>
         <ul>
-            <li><code>arm_v2</code> - T.B.D.</li>
+            <li><code>Real wensite</code> - Soon™</li>
         </ul>
     </div>
 
     <div class="block">
-        <h2>$ ls -la resources/</h2>
-        <p class="cryptic">// useful sources for FTC & beyond</p>
+        <h2>$ ls -la resources\</h2>
+        <p class="cryptic">\\ useful sources for FTC & beyond</p>
         <ul>
             <li><a href="https://www.firstinspires.org/robotics/ftc" target="_blank">FIRST Tech Challenge</a> - official FTC site</li>
             <li><a href="https://ftc-docs.firstinspires.org/" target="_blank">FTC Documentation</a> - game manuals & rules</li>
@@ -148,7 +148,7 @@
     </div>
 
     <h2>$ echo $STATUS</h2>
-    <p>Currently building. Debugging. Learning.</p>
+    <p>Currently making things Debugging. Learning.</p>
 
     <script>
         function toggleTheme() {
@@ -157,7 +157,6 @@
             html.setAttribute('data-theme', current === 'light' ? 'dark' : 'light');
         }
 
-        // Auto-detect system preference on load
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
             document.documentElement.setAttribute('data-theme', 'light');
         }
