@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>./teoretika</title>
+    <style>
+        @font-face {
+            font-family: 'Berkeley';
+            src: url('BerkeleyMonoTrial-Regular.otf') format('opentype');
+        }
+
+        :root {
+            --bg: #282828;
+            --fg: #ebdbb2;
+            --bg0: #1d2021;
+            --bg1: #3c3836;
+            --orange: #fe8019;
+            --yellow: #fabd2f;
+            --green: #b8bb26;
+            --aqua: #8ec07c;
+        }
+
+        [data-theme="light"] {
+            --bg: #fbf1c7;
+            --fg: #3c3836;
+            --bg0: #f9f5d7;
+            --bg1: #ebdbb2;
+            --orange: #af3a03;
+            --yellow: #b57614;
+            --green: #79740e;
+            --aqua: #427b58;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Berkeley', monospace;
+            background: var(--bg);
+            color: var(--fg);
+            padding: 2rem;
+            line-height: 1.6;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .toggle {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: var(--bg1);
+            border: 2px solid var(--fg);
+            color: var(--fg);
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            font-family: 'Berkeley', monospace;
+            transition: all 0.3s;
+        }
+
+        .toggle:hover {
+            background: var(--orange);
+        }
+
+        h1 {
+            color: var(--orange);
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        h2 {
+            color: var(--yellow);
+            margin-top: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .guarb {
+            color: var(--aqua);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        a {
+            color: var(--green);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .block {
+            background: var(--bg0);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-left: 3px solid var(--orange);
+        }
+
+        code {
+            background: var(--bg1);
+            padding: 0.2rem 0.4rem;
+            color: var(--aqua);
+        }
+
+        ul {
+            margin-left: 2rem;
+            margin-top: 0.5rem;
+        }
+
+        li {
+            margin: 0.3rem 0;
+        }
+    </style>
+</head>
+<body>
+    <button class="toggle" onclick="toggleTheme()">[ theme ]</button>
+
+    <h1>~/teoretika</h1>
+    <p class="guarb">// autonomous systems.</p>
+
+    <div class="block">
+        <h2>$ cat projects.txt</h2>
+        <ul>
+            <li><code>arm_v2</code> - T.B.D.</li>
+        </ul>
+    </div>
+
+    <div class="block">
+        <h2>$ ls -la resources/</h2>
+        <p class="cryptic">// useful sources for FTC & beyond</p>
+        <ul>
+            <li><a href="https://www.firstinspires.org/robotics/ftc" target="_blank">FIRST Tech Challenge</a> - official FTC site</li>
+            <li><a href="https://ftc-docs.firstinspires.org/" target="_blank">FTC Documentation</a> - game manuals & rules</li>
+            <li><a href="https://github.com/FIRST-Tech-Challenge/FtcRobotController" target="_blank">FTC Robot Controller</a> - SDK on GitHub</li>
+            <li><a href="https://gm0.org/" target="_blank">Game Manual 0</a> - community guide</li>
+            <li><a href="https://www.ctrlaltftc.com/" target="_blank">CTRL ALT FTC</a> - programming tutorials</li>
+            <li><a href="https://github.com/acmerobotics/road-runner" target="_blank">Road Runner</a> - motion planning library</li>
+        </ul>
+    </div>
+
+    <div class="block">
+        <p class="guarb">
+            > "Any sufficiently advanced technology is indistinguishable from magic."<br>
+            > - Arthur C. Clarke
+        </p>
+    </div>
+
+    <h2>$ echo $STATUS</h2>
+    <p>Currently building. Debugging. Learning.</p>
+
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const current = html.getAttribute('data-theme');
+            html.setAttribute('data-theme', current === 'light' ? 'dark' : 'light');
+        }
+
+        // Auto-detect system preference on load
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+    </script>
+</body>
+</html>
